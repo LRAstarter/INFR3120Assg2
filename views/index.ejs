@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css//all.min.css"/>
+    <link rel="stylesheet" href="/stylesheets/indexStyle.css" />
+  </head>
+  <body>
+    <!--Navbar-->
+    <!-- EXPLAIN THINGS-->
+    <!-- W3SCHOOLS NAVBAR-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+            <% if (title == "Home") {%>
+              <a class="nav-link active" href="/home">Home</a>
+            <% } else { %>
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <% } %>
+
+            <li class="nav-item">
+            <% if (title == "Blog") {%>
+              <a class="nav-link active" href="/blog">Blog</a>
+            <% } else { %>
+              <a class="nav-link" href="/blog">Blog</a>
+            </li>
+            <% } %>
+
+            <li class="nav-item">
+            <% if (title == "Projects") {%>
+              <a class="nav-link active" href="/projects">Projects</a>
+            <% } else { %>
+              <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <% } %>
+
+            <li class="nav-item">
+            <% if (title == "Contact") {%>
+              <a class="nav-link active" href="/contact">Contact Me</a>
+            <% } else { %>
+              <a class="nav-link" href="/contact">Contact Me</a>
+            </li>
+            <% } %>
+              
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron">
+    <h1 class="display-4">Welcome to my <%= title %> page!</h1>
+    <hr class="my-4">
+    </div>
+    <!-- Main content -->
+    <br></br>
+    <% if (title == "Home") {%>
+      <div id = "col-container">
+                <div id = "left-column">
+                    <h1>
+                        Let me Introduce myself:
+                    </h1>
+                    <article>
+                        <p></p>
+                        <h4>
+                            Hi I'm Jevin, this is my homepage/portfolio where I keep all the interesting things<br>
+                            Here you'll find various Projects that I have worked on as well as a Blog that I will keep updated. Here you can also Contact me, or visit my various social media
+                            that I have. <br>
+                            Enjoy your stay while you are here!
+                        </h4>
+
+                    </article>
+                </div>
+                <div id = "right-column">
+                    <h2>Picture of Me!</h2>
+                    <img src = "images/IMAAGE.jpg" height = auto width = 70% alt="Handsome lad">
+                    <h5>Based in Oshawa, Ontario I go to Ontario tech where I study networking and information technology</h5>
+
+                </div>
+            </div>
+    <% } %>
+
+    <% if (title == "Projects") {%>
+      <h3> Enjoy a project I did on the atari 2600</h3>
+      <video width="1120" height="630"controls poster="media/posterEle.jpg">
+        <source src = "images/Atari.mp4" types="video/mp4">
+      </video>
+    <% } %>
+
+    <% if (title == "Blog") {%>
+    <div style="margin: 20px 0px 40px;">
+      <h2 style="box-shadow: none; color: unset;">
+        <article style="padding: 10px; margin: 10px 0px; box-shadow: rgba(10, 10, 10, 0.1) 0px 0.5em 1em -0.125em, rgba(10, 10, 10, 0.02) 0px 0px 0px 1px;">
+          <h2>Hello World</h2>
+          <small style="font-size: 70%;">May 01, 2015</small>
+          <p>This is my first post on my blog! I hope that you'll join me in my future journey through this land of computers</p>
+        </article>
+      </h2>
+    </div>  
+
+    <% } %>
+
+    <% if (title == "Contact") {%>
+      <h2>Contact Me</h2>
+
+            <form action="/contactInfo.php">
+            <label for="fname">Full name:</label><br>
+            <div class ="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Username" aria-label="Your name here" aria-describedby="basic-addon1" id = "fname">
+            </div>
+            <br>
+            <div class ="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" id = "Email">
+            </div>
+            <br>
+            <div class = "input-group input-group-lg">
+              <textarea class="form-control" name="message" placeholder="Your Message"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+    
+    <% } %>
+
+    <!-- Bottom Navbar from bootstrap-->
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+      <div class="container-fluid">
+        <h6 class="navbar-brand" href="#">&copy; Copyright 2022.</h6>
+        <ul class="navbar-nav ms-auto">
+        <li>
+          <a class ="nav-link" href = "www.linkedin.com/in/jevin-chen-96a517243"><i class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a class ="nav-link" href = "https://github.com/LRAstarter"><i class="fa-brands fa-lg fa-github"></i></a>
+        </li>
+        </ul>
+      </div>
+    </nav>
+    <script src="/javascripts/app.js"></script>
+    <script src="/boostrap/dist/js/bootstrap.min.js"></script>
+    <script src="/jquery/dist/jquery.min.js"></script>
+  </body>
+</html>
